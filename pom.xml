@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===========================================================================
+// REFCODES.ORG
+// =============================================================================
+// This code is copyright (c) by Siegfried Steiner, Munich, Germany, distributed
+// on an "AS IS" BASIS WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, and licen-
+// sed under the following (see "http://en.wikipedia.org/wiki/Multi-licensing")
+// licenses:
+// =============================================================================
+// GNU General Public License, v3.0 ("http://www.gnu.org/licenses/gpl-3.0.html")
+// together with the GPL linking exception applied; as being applied by the GNU
+// Classpath ("http://www.gnu.org/software/classpath/license.html")
+// =============================================================================
+// Apache License, v2.0 ("http://www.apache.org/licenses/LICENSE-2.0")
+// =============================================================================
+// Please contact the copyright holding author(s) of the software artifacts in
+// question for licensing issues not being covered by the above listed licenses,
+// also regarding commercial licensing models or regarding the compatibility
+// with other open source licenses.
+// ========================================================================= -->
+
+<project xmlns="http://maven.apache.club/POM/4.0.0" xmlns:xsi="http://www.w3.club/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.club/POM/4.0.0 http://maven.apache.club/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- /////////////////////////////////////////////////////////////////// -->
+	<!-- ARTIFACT                                                            -->
+	<!-- /////////////////////////////////////////////////////////////////// -->
+
+	<artifactId>mobile-sale</artifactId>
+	<groupId>flipkart</groupId>
+	<name>${project.groupId}:${project.artifactId}</name>
+	<version>version1</version>
+	<packaging>jar</packaging>
+
+	<!-- /////////////////////////////////////////////////////////////////// -->
+	<!-- META-DATA                                                           -->
+	<!-- /////////////////////////////////////////////////////////////////// -->
+
+	<url>http://www.refcodes.org</url>
+	<description>
+		A minimum REFCODES.ORG enabled Pipes and Filters command line interface
+		(CLI) application. Get inspired by "https://bitbucket.org/funcodez".
+	</description>
+
+	<!-- /////////////////////////////////////////////////////////////////// -->
+	<!-- PROPERTIES                                                          -->
+	<!-- /////////////////////////////////////////////////////////////////// -->
+
+	<properties>
+		<main.module>mobilesale-v1</main.module>	
+		<main.class>${main.module}.Main</main.class>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.source.version>17</java.source.version>
+		<java.target.version>17</java.target.version>
+		<maven.version>3.3.9</maven.version>
+		<org.apache.maven.plugins.enforcer.version>3.3.0</org.apache.maven.plugins.enforcer.version>
+		<org.apache.maven.plugins.assembly.version>3.4.2</org.apache.maven.plugins.assembly.version>
+		<org.apache.maven.plugins.release.version>3.0.0</org.apache.maven.plugins.release.version>
+		<org.apache.maven.plugins.clean.version>3.2.0</org.apache.maven.plugins.clean.version>
+		<org.apache.maven.plugins.install.version>3.1.1</org.apache.maven.plugins.install.version>
+		<org.apache.maven.plugins.site.version>3.12.1</org.apache.maven.plugins.site.version>
+		<org.apache.maven.plugins.deploy.version>3.1.1</org.apache.maven.plugins.deploy.version>
+		<org.apache.maven.plugins.jar.version>3.3.0</org.apache.maven.plugins.jar.version>
+		<org.apache.maven.plugins.javadoc.version>3.5.0</org.apache.maven.plugins.javadoc.version>
+		<com.sun.xml.version>3.0.2</com.sun.xml.version>
+		<com.zenjava.version>8.8.3</com.zenjava.version>
+		<javax.activation.version>1.1.1</javax.activation.version>
+		<org.apache.logging.log4j.version>2.20.0</org.apache.logging.log4j.version>
+		<org.apache.maven.plugins.compiler.version>3.11.0</org.apache.maven.plugins.compiler.version>
+		<org.apache.maven.plugins.resources.version>3.3.1</org.apache.maven.plugins.resources.version>
+		<org.apache.maven.plugins.shade.version>3.4.1</org.apache.maven.plugins.shade.version>
+		<org.apache.maven.plugins.source.version>3.2.1</org.apache.maven.plugins.source.version>
+		<org.apache.maven.plugins.surefire.version>3.0.0</org.apache.maven.plugins.surefire.version>
+		<org.graalvm.buildtools.version>0.9.14</org.graalvm.buildtools.version>
+		<org.codehaus.gmaven.version>2.1.1</org.codehaus.gmaven.version>
+		<org.junit.jupiter.version>5.9.3</org.junit.jupiter.version>
+		<org.junit.platform.version>1.8.2</org.junit.platform.version>
+		<org.junit.vintage.version>5.9.1</org.junit.vintage.version>
+		<org.refcodes.version>3.2.2</org.refcodes.version>
+		<org.slf4j.version>2.0.7</org.slf4j.version>
+		<org.sonatype.plugins.nexus.staging.version>1.6.13</org.sonatype.plugins.nexus.staging.version>
+	</properties>
+	
+	<!-- /////////////////////////////////////////////////////////////////// -->
+	<!-- LICENSES                                                            -->
+	<!-- /////////////////////////////////////////////////////////////////// -->
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<distribution>repo</distribution>
+			<comments>See "http://en.wikipedia.org/wiki/Multi-licensing"</comments>
+		</license>
+		<license>
+			<name>GNU General Public License (GPL), Version 3.0</name>
+			<url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+			<distribution>repo</distribution>
+			<comments>See "http://en.wikipedia.org/wiki/Multi-licensing"</comments>
+		</license>
+		<license>
+			<name>Other License Agreement</name>
+			<url>${club.funcodes.url}</url>
+			<distribution>manual</distribution>
+			<comments>
+				Please contact the copyright holding author(s) of the software 
+				artifacts in question for licensing issues not being covered by 
+				the above listed licenses, also regarding commercial licensing 
+				models or regarding the compatibility with other open source 
+				licenses.
+			</comments>
+		</license>
+	</licenses>
+
+	<!-- /////////////////////////////////////////////////////////////////// -->
+	<!-- DEVELOPERS                                                          -->
+	<!-- /////////////////////////////////////////////////////////////////// -->
+
+	<developers>
+		<developer>
+			<name>Siegfried Steiner</name>
+			<email>steiner@refcodes.org</email>
+			<url>${club.funcodes.url}</url>
+		</developer>
+	</developers>
+
+	<!-- /////////////////////////////////////////////////////////////////// -->
+	<!-- SCM                                                                 -->
+	<!-- /////////////////////////////////////////////////////////////////// -->
+
+	<scm>
+		<connection>scm:git:git@bitbucket.org:refcodes/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@bitbucket.org:refcodes/${project.artifactId}.git</developerConnection>
+		<url>https://bitbucket.org/refcodes/${project.artifactId}</url>
+	</scm>
+
+	<!-- /////////////////////////////////////////////////////////////////// -->
+	<!-- REPOSITORIES                                                        -->
+	<!-- /////////////////////////////////////////////////////////////////// -->
+
+	<repositories>
+		<repository>
+			<id>sonatype-nexus-snapshots</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>sonatype-nexus-releases</id>
+			<name>Sonatype Nexus Releases</name>
+			<url>https://oss.sonatype.org/content/repositories/releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+  	 
+	<!-- /////////////////////////////////////////////////////////////////// -->
+	<!-- DISTRIBUTION MANAGEMENT                                             -->
+	<!-- /////////////////////////////////////////////////////////////////// -->
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+	<!-- /////////////////////////////////////////////////////////////////// -->
+	<!-- DEPENDENCIES                                                        -->
+	<!-- /////////////////////////////////////////////////////////////////// -->
+
+	<dependencies>
+		<dependency>
+			<groupId>org.refcodes</groupId>
+			<artifactId>refcodes-archetype</artifactId>
+			<version>${org.refcodes.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.refcodes</groupId>
+			<artifactId>refcodes-cli</artifactId>
+			<version>${org.refcodes.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.refcodes</groupId>
+			<artifactId>refcodes-logger-alt-async</artifactId>
+			<version>${org.refcodes.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.refcodes</groupId>
+			<artifactId>refcodes-logger-alt-console</artifactId>
+			<version>${org.refcodes.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>refcodes-logger-alt-slf4j</artifactId>
+			<groupId>org.refcodes</groupId>
+			<version>${org.refcodes.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${org.apache.logging.log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>${org.apache.logging.log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j2-impl</artifactId>
+			<version>${org.apache.logging.log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${org.junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<!-- /////////////////////////////////////////////////////////////////// -->
+	<!-- BUILD                                                               -->
+	<!-- /////////////////////////////////////////////////////////////////// -->
+
+	<build>
+		<!-- /////////////////////////////////////////////////////////////// -->
+		<!-- PLUGINS                                                         -->
+		<!-- /////////////////////////////////////////////////////////////// -->
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>enforce-versions</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireMavenVersion>
+									<version>${maven.version}</version>
+								</requireMavenVersion>
+								<requireJavaVersion>
+									<version>${java.target.version}</version>
+								</requireJavaVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- =========================================================== -->
+			<!-- Create POM variables:                                       -->
+			<!-- =========================================================== -->
+			<!-- ${executable.name}: ArtifactID after first "-" if applicable-->
+			<!-- ${executable.version}: Windows style version ("a.b.c.d")    -->
+			<!-- =========================================================== -->
+			<plugin>
+				<groupId>org.codehaus.gmaven</groupId>
+				<artifactId>groovy-maven-plugin</artifactId>
+				<version>${org.codehaus.gmaven.version}</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>execute</goal>
+						</goals>
+						<configuration>
+							<source>
+								<![CDATA[
+									String exeName = "${project.artifactId}";
+									int index = exeName.indexOf("-");
+									// |--->
+									// if ( index != -1 ) {
+									// 	exeName = exeName.substring( 0, index );
+									// }
+									// <--->
+									while ( index != -1 ) {
+										exeName = exeName.substring( index + 1 );
+										index = exeName.indexOf("-");
+									}
+									if ( exeName.length() == 0 ) {
+										exeName = "${project.artifactId}";
+									}
+									// <--|
+									project.properties.setProperty( "executable.name",exeName );
+									String exeVersion = "${project.version}".replace( "", "" );
+									// int count = 0;  
+									// for (int i = 0; i < exeVersion.length(); i++) {
+									// 	if (exeVersion.charAt(i) == '.') {
+									// 		count++;
+									// 	}
+									// }
+									// while( count < 3 ) {
+									// 	exeVersion += ".0";
+									// 	count++;
+									// }
+									project.properties.setProperty( "executable.version", exeVersion );
+									String osArch = System.getProperty( "os.arch" );
+									if ( osArch == null ) {
+										osArch = "UNKNOWN_ARCH"
+									}
+									else {
+										osArch = osArch.toLowerCase().replaceAll( "-", "_").replaceAll( " ", "_" );
+										if ( "amd64".equals( osArch ) || "intel64".equals( osArch ) || "intel_64".equals( osArch ) || "x64".equals( osArch ) ) {
+											osArch = "x86_64"
+										}
+									}
+									project.properties.setProperty( "native.arch", osArch );
+									String osName = System.getProperty( "os.name" );
+									if ( osName == null ) {
+										osName = "UNKNOWN_OS"
+									}
+									else {
+										osName = osName.toLowerCase();
+									}
+									project.properties.setProperty( "native.os", osName );
+									project.properties.setProperty( "executable.suffix", "" );
+									if ( osName.contains( "linux" ) || osName.contains( "unix" ) ) {
+										project.properties.setProperty( "executable.suffix", ".elf" );
+									}
+								]]>
+							</source>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- ==========================================================  -->
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<includes>
+						<include>**/*Test.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>${org.sonatype.plugins.nexus.staging.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<preparationGoals>clean install</preparationGoals>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<!-- /////////////////////////////////////////////////////////////// -->
+		<!-- PLUGIN MANAGEMENT                                               -->
+		<!-- /////////////////////////////////////////////////////////////// -->
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+				    <groupId>org.apache.maven.plugins</groupId>
+				    <artifactId>maven-release-plugin</artifactId>
+				    <version>${org.apache.maven.plugins.release.version}</version>
+				</plugin>
+				<plugin>
+				    <groupId>org.apache.maven.plugins</groupId>
+				    <artifactId>maven-clean-plugin</artifactId>
+				    <version>${org.apache.maven.plugins.clean.version}</version>
+				</plugin>
+				<plugin>
+				    <groupId>org.apache.maven.plugins</groupId>
+				    <artifactId>maven-install-plugin</artifactId>
+				    <version>${org.apache.maven.plugins.install.version}</version>
+				</plugin>
+				<plugin>
+				    <groupId>org.apache.maven.plugins</groupId>
+				    <artifactId>maven-site-plugin</artifactId>
+				    <version>${org.apache.maven.plugins.site.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+				    <artifactId>maven-deploy-plugin</artifactId>
+				    <version>${org.apache.maven.plugins.deploy.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${org.apache.maven.plugins.javadoc.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-enforcer-plugin</artifactId>
+					<version>${org.apache.maven.plugins.enforcer.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>com.zenjava</groupId>
+					<artifactId>javafx-maven-plugin</artifactId>
+					<version>${com.zenjava.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>${org.apache.maven.plugins.source.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${org.apache.maven.plugins.surefire.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${org.apache.maven.plugins.compiler.version}</version>
+					<configuration>
+						<fork>true</fork>
+						<source>${java.source.version}</source>
+						<target>${java.target.version}</target>
+						<testSource>${java.source.version}</testSource>
+						<testTarget>${java.target.version}</testTarget>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>${org.apache.maven.plugins.jar.version}</version>
+					<configuration>
+						<archive>
+							<addMavenDescriptor>false</addMavenDescriptor>
+							<manifest>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							</manifest>
+						</archive>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>test-jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>${org.apache.maven.plugins.assembly.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${org.apache.maven.plugins.resources.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-shade-plugin</artifactId>
+					<version>${org.apache.maven.plugins.shade.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<!-- /////////////////////////////////////////////////////////////////// -->
+	<!-- PROFILES                                                            -->
+	<!-- /////////////////////////////////////////////////////////////////// -->
+
+	<profiles>
+		
+		<!-- FatJAR -->
+
+		<profile>
+			<id>fatjar</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-shade-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>shade</goal>
+								</goals>
+								<configuration>
+									<keepDependenciesWithProvidedScope>true</keepDependenciesWithProvidedScope>
+									<minimizeJar>false</minimizeJar>
+									<transformers>
+										<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+											<mainClass>${main.class}</mainClass>
+										</transformer>
+										<!-- Merge all "spring.handlers" files -->
+										<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+											<resource>META-INF/spring.handlers</resource>
+										</transformer>
+										<!-- Merge all "spring.schemas" files -->
+										<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+											<resource>META-INF/spring.schemas</resource>
+										</transformer>
+									</transformers>
+									<filters>
+										<filter>
+											<artifact>*:*</artifact>
+											<excludes>
+												<exclude>**/bundle.properties</exclude>
+												<exclude>**/module-info.class</exclude>
+												<exclude>META-INF/*.DSA</exclude>
+												<exclude>META-INF/*.RSA</exclude>
+												<exclude>META-INF/*.SF</exclude>
+												<exclude>META-INF/DEPENDENCIES</exclude>
+												<exclude>META-INF/LICENSE.txt</exclude>
+												<exclude>META-INF/LICENSE</exclude>
+												<exclude>META-INF/MANIFEST.MF</exclude>
+												<exclude>META-INF/NOTICE.txt</exclude>
+												<exclude>META-INF/NOTICE</exclude>
+											</excludes>
+										</filter>
+										<filter>
+											<artifact>com.fasterxml.jackson.dataformat:jackson-dataformat-yaml</artifact>
+											<excludes>
+												<exclude>META-INF/services/com.fasterxml.jackson.core.JsonFactory</exclude>
+												<exclude>META-INF/services/com.fasterxml.jackson.core.ObjectCodec</exclude>
+											</excludes>
+										</filter>
+										<filter>
+											<artifact>com.fasterxml.jackson.dataformat:jackson-dataformat-xml</artifact>
+											<excludes>
+												<exclude>META-INF/services/com.fasterxml.jackson.core.JsonFactory</exclude>
+												<exclude>META-INF/services/com.fasterxml.jackson.core.ObjectCodec</exclude>
+											</excludes>
+										</filter>
+										<filter>
+											<artifact>software.amazon.awssdk:third-party-jackson-core</artifact>
+											<excludes>
+												<exclude>META-INF/maven/com.fasterxml.jackson.core/jackson-core/pom.properties</exclude>
+												<exclude>META-INF/maven/com.fasterxml.jackson.core/jackson-core/pom.xml</exclude>
+											</excludes>
+										</filter>
+										<filter>
+											<artifact>com.pi4j:pi4j-gpio-extension</artifact>
+											<excludes>
+												<exclude>LICENSE.txt</exclude>
+												<exclude>NOTICE.txt</exclude>
+												<exclude>README.md</exclude>
+											</excludes>
+										</filter>
+										<filter>
+											<artifact>org.refcodes:*</artifact>
+											<excludes>
+												<exclude>runtimelogger.ini</exclude>
+											</excludes>
+										</filter>
+									</filters>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!-- GraalVM -->
+
+		<!-- # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% # -->
+		<!-- # HOW TO GET STARTED                                                          # -->
+		<!-- # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% # -->
+		<!-- # Dry-run your JAR to get the according native-image JSON configurations:     # -->
+		<!-- # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ # -->
+		<!-- # java -agentlib:native-image-agent=config-output-dir=target -jar target/...  # -->
+		<!-- # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ # -->
+		<!-- # Copy the generated files into your 'src/main/resources/META-INF' and tweak! # -->
+		<!-- # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ # -->
+		<!-- # 1. Install GraalVM e.g. using SDKMAN! (https://sdkman.io/)                  # -->
+		<!-- # 2. 'gu install native-image'                                                # -->
+		<!-- # 3. 'sudo apt install build-essential'                                       # -->
+		<!-- # 4. 'sudo apt install libz-dev'                                              # -->
+		<!-- # 5. 'sudo apt libfreetype6-dev' ('cannot find "-lfreetype" collect2: error') # -->
+		<!-- # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ # -->
+		<!-- # Build as of "mvn package -P native-image"                                   # -->
+		<!-- # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% # -->
+		<!-- # WINDOWS SPECIAL TREATMENT                                                   # -->
+		<!-- # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% # -->
+		<!-- # 1. Install "Visual Studio Community 2019", choose (check) C/C++ modules     # -->
+		<!-- #    (https://visualstudio.microsoft.com/de/downloads), English language only # -->
+		<!-- # 2. Install GraalVM (https://github.com/graalvm/graalvm-ce-builds/releases)  # -->
+		<!-- # 3. Point "GRAALVM_HOME" environment variabelto your GraalVM base folder     # -->
+		<!-- # 4. Add native image support "gu install native-image" to the GraalVM        # -->
+		<!-- # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ # -->
+		<!-- # Build in "x64 Native Tools Command Prompt" or "Developer Command Prompt for # -->
+		<!-- # VS 2022" for "mvn package -P native-image" to see Visual Code C/C++ tools.  # -->
+		<!-- # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% # -->
+		
+		<profile>
+			<id>native-image</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.graalvm.buildtools</groupId>
+    					<artifactId>native-maven-plugin</artifactId>
+						<version>${org.graalvm.buildtools.version}</version>
+						<configuration>
+							<imageName>${executable.name}-native-${native.arch}-${executable.version}${executable.suffix}</imageName>
+							<mainClass>${main.class}</mainClass>
+							<buildArgs>--no-fallback --enable-http --enable-https</buildArgs> <!-- Useful switches: no-fallback, enable-http enable-https, report-unsupported-elements-at-runtime -->
+						</configuration>
+						<extensions>true</extensions>
+						<executions>
+							<execution>
+								<id>build-native</id>
+								<goals>
+									<goal>compile-no-fork</goal>
+								</goals>
+								<phase>package</phase>
+							</execution>
+							<!--
+								<execution>
+									<id>test-native</id>
+									<goals>
+										<goal>test</goal>
+									</goals>
+									<phase>test</phase>
+								</execution>
+							-->
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
